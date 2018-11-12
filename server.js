@@ -6,7 +6,7 @@ var express = require('express'),
     assert = require('assert'),
     ObjectId = require('mongodb').ObjectID;
 
-var url = '';
+var url = $(CUSTOMCONNSTRToCosmosDB);
 //var url = 'mongodb://jmcdb01:btF60bUrXKjcVSVBRnaUBFR34VuCqkgQYDngvDWglG7GchYaG3lWdwfTGz17p73tXz2fFj3qTULPNanHUpdcZQ==@jmcdb01.documents.azure.com:10255/?ssl=true&replicaSet=globaldb';
 
 app.use(express.static(__dirname + "/public"));
