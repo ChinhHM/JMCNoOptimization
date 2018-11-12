@@ -6,8 +6,8 @@ var express = require('express'),
     assert = require('assert'),
     ObjectId = require('mongodb').ObjectID;
 
-var url = $(CUSTOMCONNSTRToCosmosDB);
-//var url = 'mongodb://jmcdb01:btF60bUrXKjcVSVBRnaUBFR34VuCqkgQYDngvDWglG7GchYaG3lWdwfTGz17p73tXz2fFj3qTULPNanHUpdcZQ==@jmcdb01.documents.azure.com:10255/?ssl=true&replicaSet=globaldb';
+//var url = $(CUSTOMCONNSTRToCosmosDB);
+var url = 'mongodb://jmcdb01:btF60bUrXKjcVSVBRnaUBFR34VuCqkgQYDngvDWglG7GchYaG3lWdwfTGz17p73tXz2fFj3qTULPNanHUpdcZQ==@jmcdb01.documents.azure.com:10255/?ssl=true&replicaSet=globaldb';
 
 app.use(express.static(__dirname + "/public"));
 
@@ -27,6 +27,8 @@ function errorHandler(err, req, res, next) {
 MongoClient.connect(process.env.MONGODB_URI || url,function(err, db){
     assert.equal(null, err);
     console.log('Successfully connected to MongoDB.');
+
+    console.log("KV value = " + $(CUSTOMCONNSTRToCosmosDB));
 
     var records_collection = db.collection('records');
 
